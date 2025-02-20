@@ -1,4 +1,34 @@
- /* All table inner and left join*/
+
+/*Start Inner join ,left join and using agreeget function*/
+select
+	s.studentId,
+	CONCAT(s.firstname ,' ',s.lastname) as Full_name,
+	sa.session,
+	CONCAT(sa.semester ,'-',"Semester") as SemesterName,
+	sa.departmentCode,
+	d.departmentName,p.amount,
+	CONCAT(tp.firstname ,' ',tp.lastname) as Teacher_name,
+	ta.Designation,tp.city ,tp.bloodgroup ,tp.religion,
+	sa.totalSemesterFees
+	from studentpersonal s
+	inner join studentacademic sa on s.studentId =sa.studentId 
+	inner join departments d  on d.departmentCode =sa.departmentCode
+	inner join teacheracademic ta  on ta.departmentCode =sa.departmentCode
+	inner join teacherpersonal tp  on tp.teacherId  =ta.teacherId 
+	left join payment p on p.studentId =s.studentId 
+	order by s.studentId asc
+	group by p.amount
+	having count(*)>1
+	order by sa.semester asc  
+	WHERE amount is not null
+/*Stop Inner join ,left join and using agreeget function */
+ 
+ 
+ 
+ /*For Last two word name selection
+  *select firstname,substr(lastname,-2) from studentpersonal s  */
+ 
+  /* All table inner and left join*/
  SELECT s.studentId,s.firstname,s.lastname,
  CONCAT(s.firstname,' ',s.lastname)as fullname,
  c.subjectCode ,d.departmentName,s3.subjectTitle,
