@@ -1,4 +1,4 @@
-
+ 
 /*Start Inner join ,left join and using agreeget function*/
 select
 	s.studentId,
