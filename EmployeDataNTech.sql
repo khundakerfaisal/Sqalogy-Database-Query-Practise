@@ -1,24 +1,38 @@
-select * from studentpersonal
+select * from studentpersonal s
+left join payment p on p.studentId =s.studentId 
+where p.amount  is null
+
+
+
+select * from studentpersonal s 
+where s.studentId  in (select studentid from payment p )
+
 SELECT * FROM studentpersonal
-LIMIT 5;
-SELECT DISTINCT religion FROM studentpersonal;
+WHERE studentpersonal.firstname LIKE '%a';
 
-create table teacherInfo(
-id int not null primary key,
-name varchar(100))
+select * from studentacademic s 
+where s.totalSemesterFees between  1500 and 1800
 
-alter table teacherinfo 
-modify id INT NOT NULL auto_increment;
+-- SELECT * FROM studentpersonal
+-- LIMIT 5;
+-- SELECT DISTINCT religion FROM studentpersonal;
 
-alter table teacherinfo 
-add address varchar(50)
+-- create table teacherInfo(
+-- id int not null primary key,
+-- name varchar(100))
+-- 
+-- alter table teacherinfo 
+-- modify id INT NOT NULL auto_increment;
+-- 
+-- alter table teacherinfo 
+-- add address varchar(50)
 
-update teacherinfo t 
-set name='Rahim'
-where id=2
+-- update teacherinfo t 
+-- set name='Rahim'
+-- where id=2
 
---Bulk Upload
-INSERT INTO teacherinfo (id, name, address) VALUES (1, 'naim', 'Dhaka');
- (2, 'shamim', 'Dhaka');
- (3, 'tamim', 'Dhaka');
- (4, 'mahim', 'Dhaka');
+-- Bulk Upload
+-- INSERT INTO teacherinfo (id, name, address) VALUES (1, 'naim', 'Dhaka');
+--  (2, 'shamim', 'Dhaka');
+--  (3, 'tamim', 'Dhaka');
+--  (4, 'mahim', 'Dhaka');
