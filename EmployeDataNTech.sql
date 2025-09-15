@@ -7,6 +7,24 @@ where p.amount  is null
 select * from studentpersonal s 
 where s.studentId  in (select studentid from payment p )
 
+alter table teacherinfo add
+teacherId int not null;
+SELECT * FROM teacherinfo WHERE teacherId IS NULL OR teacherId = 0;
+
+-- foreign key
+ALTER TABLE teacherinfo 
+ADD CONSTRAINT fk_teacherId
+FOREIGN KEY (teacherId)
+REFERENCES teacheracademic(teacherId);
+
+-- ALTER TABLE teacherinfo
+-- MODIFY teacherId INT;
+-- ALTER TABLE teacheracademic
+-- MODIFY teacherId INT;
+
+
+
+
 SELECT * FROM studentpersonal
 WHERE studentpersonal.firstname LIKE '%a';
 
