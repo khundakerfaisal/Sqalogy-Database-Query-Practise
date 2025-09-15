@@ -4,5 +4,3 @@ LIMIT 5;
 SELECT DISTINCT religion FROM studentpersonal;
 
 
-
-
