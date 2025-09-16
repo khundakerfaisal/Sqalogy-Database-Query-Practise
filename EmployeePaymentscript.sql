@@ -10,3 +10,6 @@ ALTER TABLE teacherpayment
 ADD CONSTRAINT fk_teacherpayment_teacherId
 FOREIGN KEY (teacherId)
 REFERENCES teacheracademic (teacherId);
+
+select * from teacherpayment t 
+insert into teacherpayment (name,amount,teacherId)values('Shamim',500.00,1)
