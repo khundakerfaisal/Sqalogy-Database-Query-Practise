@@ -12,4 +12,11 @@ FOREIGN KEY (teacherId)
 REFERENCES teacheracademic (teacherId);
 
 select * from teacherpayment t 
-insert into teacherpayment (name,amount,teacherId)values('Shamim',500.00,1)
+insert into teacherpayment (name,amount,teacherId)values('hamim',500.00,1),
+('tamim',700.00,2),
+('rahim',800.00,3),
+('naim',600.00,1)
+
+
+select t2.teacherId ,t2.name,t3.Tnxid ,t3.amount  from teacherpayment t3  
+left join teacherinfo t2 on t2.teacherId =t3.teacherId 
