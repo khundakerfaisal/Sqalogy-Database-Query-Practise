@@ -27,7 +27,25 @@ group by departmentCode
 having sum(totalSemesterFees)>2000
 
 
+SELECT * FROM studentacademic s 
+where totalSemesterFees between 1500 and 1600 
 
+
+SELECT * FROM studentpersonal
+WHERE studentpersonal.firstname LIKE '%a%';
+
+select * from studentpersonal s 
+where s.studentId  in (select s.studentId  from payment)
+
+select * from studentacademic s 
+
+select studentid,totalSemesterFees,
+case
+	when totalSemesterfees<1400 then 'low'
+	when totalSemesterfees between 1500 and 1700 then 'medium'
+	else 'high'
+	end as fees
+	from studentacademic s 
 
 
 
