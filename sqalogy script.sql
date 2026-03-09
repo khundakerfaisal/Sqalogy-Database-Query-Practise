@@ -22,8 +22,10 @@ select * from departments where departmentname='Civil Engineering'
 select * from studentpersonal
 order by studentid asc
 
-select * from studentacademic
-group by departmentcode
+select sum(totalSemesterFees) from studentacademic
+group by departmentCode 
+having sum(totalSemesterFees)>2000
+
 
 
 
