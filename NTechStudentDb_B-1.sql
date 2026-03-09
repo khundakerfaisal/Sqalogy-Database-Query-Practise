@@ -60,7 +60,8 @@
 
 -- Agregate Function
 
-	/*select count(*) from studentpersonal s 
+	/* 
+	select count(*) from studentpersonal s 
 	
 	select sum(totalSemesterFees) from studentacademic 
 	
@@ -68,7 +69,8 @@
 	
 	select MAX(totalSemesterFees) from studentacademic  
 	
-	select MIN(totalSemesterFees) from studentacademic */
+	select MIN(totalSemesterFees) from studentacademic
+	 */
 
 -- IN operation
 
