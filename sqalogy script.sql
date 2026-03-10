@@ -41,14 +41,17 @@ select * from studentacademic s
 
 select studentid,totalSemesterFees,
 case
-	when totalSemesterfees<1400 then 'low'
-	when totalSemesterfees between 1500 and 1700 then 'medium'
+	when totalSemesterFees<1500 then 'low'
+	when totalSemesterFees between 1600 and 1700 then 'medium'
 	else 'high'
-	end as fees
-	from studentacademic s 
+end as fees
 
+from studentacademic 
 
-
+select * from studentpersonal s 
+SELECT firstname,lastname,
+concat(firstname,'',lastname)as fullname
+from studentpersonal
 
 
 
