@@ -47,11 +47,15 @@ case
 end as fees
 
 from studentacademic 
+select* from studentacademic
 
 select * from studentpersonal s 
-SELECT firstname,lastname,
-concat(firstname,'',lastname)as fullname
-from studentpersonal
+
+SELECT sp.firstname,sp.lastname,
+concat(sp.firstname,'',sp.lastname)as fullname,
+sa.departmentcode
+from studentpersonal sp
+inner join studentacademic sa on sa.studentid=sp.studentid
 
 
 
