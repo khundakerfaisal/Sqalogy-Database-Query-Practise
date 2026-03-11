@@ -1,3 +1,63 @@
+-- inner join
+	-- select s.studentId,s.firstname,s.lastname,
+	-- concat(firstname,'',lastname)as full_name,
+	-- s2.departmentCode,s2.semester,s2.totalSemesterFees 
+	-- from studentpersonal s 
+	-- inner join studentacademic  s2 on s.studentId =s2.studentId
+
+-- Left Join
+	-- select s.studentId,s.firstname,s.lastname,
+	-- concat(firstname,'',lastname)as full_name,
+	-- s2.departmentCode,s2.semester,s2.totalSemesterFees 
+	-- from studentpersonal s 
+	-- left join studentacademic  s2 on s.studentId =s2.studentId
+
+-- Right Join
+	-- select s.studentId,s.firstname,s.lastname,
+	-- concat(firstname,'',lastname)as full_name,
+	-- s2.departmentCode,s2.semester,s2.totalSemesterFees 
+	-- from studentpersonal s 
+	-- right join studentacademic  s2 on s.studentId =s2.studentId
+
+
+
+select s.studentId,s.firstname,s.lastname,
+concat(firstname,'',lastname)as full_name,
+s2.departmentCode 
+from studentpersonal s 
+cross join studentacademic  s2 
+
+select *from studentpersonal sp  
+select *from studentacademic sa 
+
+
+
+
+
+
+
+create table teacher_info(
+id INT NOT NULL AUTO_INCREMENT PRIMARY key,
+department_code varchar(100)
+)
+
+alter table teacher_info
+add column university_id int,
+add constraint fk_university
+foreign key(university_id)
+references university_name(university_id)
+
+
+create table university_Dept(
+id INT NOT NULL AUTO_INCREMENT PRIMARY key,
+department_code varchar(100),
+university_id INT,
+FOREIGN KEY(university_id) references university_Name(university_id))
+
+
+
+
+
 create table salary_info(
 id int not null auto_increment primary key,
 amount decimal(10,2)
@@ -51,11 +111,7 @@ select* from studentacademic
 
 select * from studentpersonal s 
 
-SELECT sp.firstname,sp.lastname,
-concat(sp.firstname,'',sp.lastname)as fullname,
-sa.departmentcode
-from studentpersonal sp
-inner join studentacademic sa on sa.studentid=sp.studentid
+
 
 
 
