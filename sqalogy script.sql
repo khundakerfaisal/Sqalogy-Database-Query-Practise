@@ -22,18 +22,21 @@
 
 
 select s.studentId,s.firstname,s.lastname,
-concat(firstname,'',lastname)as full_name,
-s2.departmentCode 
+sa.departmentCode 
 from studentpersonal s 
-cross join studentacademic  s2 
+cross join studentacademic  sa
 
 select *from studentpersonal sp  
 select *from studentacademic sa 
 
+--  Finding Null Value
+	-- select firstname,lastname,gender from studentpersonal
+	-- where gender is null
 
-
-
-
+-- Subqueries
+	-- select * from payment p where not exists
+	-- (select * from studentpersonal s 
+	-- where s.studentId=p.studentId)
 
 
 create table teacher_info(
@@ -107,6 +110,7 @@ case
 end as fees
 
 from studentacademic 
+
 select* from studentacademic
 
 select * from studentpersonal s 
