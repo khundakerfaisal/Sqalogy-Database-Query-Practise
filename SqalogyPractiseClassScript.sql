@@ -43,13 +43,21 @@
 -- -------------------------------------------------------- --
 
 
--- Insert value into table --
+-- Insert Values into Table --
+
+-- Single Row Insert --
 	
-	insert into studentInformation (student_id,student_name,Mobile) values
-	(1,'Razon','013184415'),
-	(2,'Emon','013184415'),
-	(3,'Rifah','014184415'),
-	(4,'Debashis','015184415')
+	INSERT INTO studentInformation (student_id, student_name, Mobile)
+	VALUES (1, 'Razon', '013184415');
+
+-- Multiple Rows Insert (Bulk Insert) --
+
+	INSERT INTO studentInformation (student_id, student_name, Mobile)
+	VALUES 
+	(1, 'Razon', '013184415'),
+	(2, 'Emon', '013184415'),
+	(3, 'Rifah', '014184415'),
+	(4, 'Debashis', '015184415');
 
 -- Update Table --
 	
