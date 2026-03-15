@@ -115,8 +115,13 @@ select* from studentacademic
 
 select * from studentpersonal s 
 
+-- left join query
+select firstname,lastname,
+concat(firstname,' ',lastname)as full_name,
+studentacademic.departmentCode,
+bloodgroup,religion,gender
 
-
-
+from studentpersonal 
+left join studentacademic on studentpersonal.studentId =studentacademic.studentId 
 
 
