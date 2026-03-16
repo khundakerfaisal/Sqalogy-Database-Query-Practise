@@ -1,9 +1,26 @@
-select * from studentpersonal s
-left join payment p on p.studentId =s.studentId 
-where p.amount  is null
+-- left Join
+		-- select * from studentpersonal s
+		-- left join payment p on p.studentId =s.studentId 
+		-- where p.amount  is null
+
+-- Case statement (Added teacher and student Inner join)
+		SELECT studentId,
+			t.teacherId,
+			CONCAT(tp.firstname,' ' ,tp.lastname)as TeacherName,
+			t.Designation,
+			studentacademic.departmentCode,totalSemesterFees,
+			CASE
+				WHEN totalSemesterFees < 1500 then 'Low'
+				WHEN totalSemesterFees Between 1500 and 1700 then 'Medium'
+				Else 'High'
+			END AS Fees
+		from studentacademic 
+inner join teacheracademic t on studentacademic.departmentCode = t.departmentCode 
+inner join teacherpersonal tp  on t.teacherId = tp.teacherId
 
 
 
+select * from studentacademic s  
 select * from studentpersonal s 
 where s.studentId  in (select studentid from payment p )
 
